@@ -1,0 +1,80 @@
+﻿@model HotelsApplication.Users
+
+@{
+    ViewBag.Title = "Marriott Enterprise Software";
+}
+
+@using (Html.BeginForm("Login", "Users", FormMethod.Post))
+{
+    <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <title>Moss Eisley</title>
+
+
+    <link href="@Url.Content("~/Content/reset.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />
+
+
+    </head>
+
+    
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+    <body style="background-color: white" >
+    <article>
+		<div class="logo" style="width:auto">
+			<a href="index.html"><img src="~/Content/themes/base/images/logo-marriott.png" title="Marriot Enterprise Software" alt="Marriott"/></a>
+		</div><!-- end logo -->
+
+		<div id="menu_icon"></div>
+		<nav>
+		
+			<ul>
+				<li><a href="#" class="selected">Insert username & password<br></a></li>
+				
+			</ul>
+		
+			<table>
+        <tr>            
+            <td>@Html.TextBoxFor(a=>a.username)</td>
+            <td>@Html.ValidationMessageFor(a=>a.username)</td>
+        </tr>
+        <tr>            
+            <td>
+                @Html.PasswordFor(a=>a.password)
+            </td>
+       </tr>
+        <tr>
+            <td>
+                @Html.ValidationMessageFor(a=>a.password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+       </tr>
+    </table>
+</nav><!-- end navigation menu -->
+
+	</article><!-- end header -->
+
+	<section class="main clearfix">
+        <img src="~/Content/themes/base/images/hotelimg.jpg" title="Marriot Enterprise Software" alt="Marriott" style="height: 100%" />
+		
+	</section><!-- end main -->
+
+</body>
+
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    }

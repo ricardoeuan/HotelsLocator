@@ -1,0 +1,47 @@
+﻿@model HotelsApplication.Hotels
+
+@using (Html.BeginForm("Edit", "Hotels", FormMethod.Post))
+{
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>Hotel Name :</td>
+            <td>@Model.hotel_name</td>
+        </tr>
+        <tr>
+            <td>Latitude :</td>
+            <td>@Model.hotel_latitude</td>
+        </tr>
+        <tr>
+            <td>Longitude :</td>
+            <td>@Model.hotel_longitude</td>
+        </tr>
+        <tr>
+            <td>Address :</td>
+            <td>@Model.address</td>
+        </tr>
+        <tr>
+            <td>Phone :</td>
+            <td>@Model.phone</td>
+        </tr>
+        <tr>
+            <td>Category :</td>
+            <td>@Model.category</td>
+        </tr>
+        <tr>
+            <td>Lowest Rate :</td>
+            <td>@Model.lowest_rate</td>
+        </tr>
+        <tr>
+            <td>Description :</td>
+            <td>@Model.hotel_description</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Update"
+                       formaction="/Hotels/Edit/@Model.HotelID" />
+                <input type="submit" value="Cancel"
+                       formaction="/Hotels/Index" />
+            </td>
+        </tr>
+    </table>
+}

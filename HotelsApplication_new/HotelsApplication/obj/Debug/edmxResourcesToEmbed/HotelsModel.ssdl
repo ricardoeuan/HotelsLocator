@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelsAppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HotelsAppModelStoreContainer">
+    <EntitySet Name="Cities" EntityType="HotelsAppModel.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hotels" EntityType="HotelsAppModel.Store.Hotels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="HotelsAppModel.Store.Users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="city_latitude" Type="float" Nullable="false" />
+    <Property Name="city_longitude" Type="float" Nullable="false" />
+    <Property Name="city_name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="city_description" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotels">
+    <Key>
+      <PropertyRef Name="HotelID" />
+    </Key>
+    <Property Name="HotelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="hotel_latitude" Type="float" Nullable="false" />
+    <Property Name="hotel_longitude" Type="float" Nullable="false" />
+    <Property Name="hotel_name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="address" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="phone" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="category" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="lowest_rate" Type="money" Nullable="false" />
+    <Property Name="hotel_description" Type="text" Nullable="false" />
+    <Property Name="photo" Type="varbinary" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="full_name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HotelsApplication.Hotels>
+
+@{
+    ViewBag.Title = "HotelsLocator";
+}
+
+@if (Session["LogedUserFullname"] != null)
+{
+    <!DOCTYPE html>    
+    <header class="header-content">
+        <img src="~/Content/themes/base/images/logo-marriott.png" />
+        <a href="~/Users/Login" class="button-link logout-button" style="float:right;">Sign Out</a>
+        <h4>Hotels Locator Manager | Home</h4>
+        <small>Welcome @Session["LogedUserFullname"].ToString()</small>
+    </header>    
+    <html>
+    <head>
+        <link href="@Url.Content("~/Content/HotelsHome.css")" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Hotels Locator</title>
+    </head>
+    <body>        
+        <div>
+            <section>
+                <a href="#hotelsManagement" id="hotelsManagement"><h3>Hotels Management Map</h3></a>
+                <p>This module allows Marriott Employees to visualize and manage hotels markers around the world in a single map. <a href="~/Hotels/Index" class="nav-buttons">Go to the Map</a></p>
+            </section>
+            <section>
+                <a href="#hotelsWebAPI" id="hotelsWebAPI"><h3>Hotels Web API</h3></a>
+                <p>This module allows Marriott Employees to test and track the status of the the Hotels Locator Web API. <a href="~/Hotels/APIClient" class="nav-buttons">Test the Web API</a></p>
+            </section>
+            <section>
+                <a href="#hotelsUsers" id="hotelsUsers"><h3>Application Administrators</h3></a>
+                <p>This module allows Marriott Employees to see the registered users to the application.<a href="~/Users/AdminUsers" class="nav-buttons">See Registered Admins</a></p>
+            </section>            
+        </div>
+    </body>
+</html>
+}

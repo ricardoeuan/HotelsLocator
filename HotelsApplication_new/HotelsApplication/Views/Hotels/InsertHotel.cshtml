@@ -1,0 +1,58 @@
+﻿@model HotelsApplication.Hotels
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm("Create", "Hotels", FormMethod.Post))
+{
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>Hotel Name</td>
+            <td>@Html.EditorFor(model => model.hotel_name)</td>
+            <td>@Html.ValidationMessageFor(model => model.hotel_name)</td>
+        </tr>
+        <tr>
+            <td>Latitude</td>
+            <td>@Html.EditorFor(model => model.hotel_latitude)</td>
+            <td>@Html.ValidationMessageFor(model => model.hotel_latitude)</td>
+        </tr>
+        <tr>
+            <td>Longitude</td>
+            <td>@Html.EditorFor(model => model.hotel_longitude)</td>
+            <td>@Html.ValidationMessageFor(model => model.hotel_longitude)</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>@Html.EditorFor(model => model.address)</td>
+            <td>@Html.ValidationMessageFor(model => model.address)</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>@Html.EditorFor(model => model.phone)</td>
+            <td>@Html.ValidationMessageFor(model => model.phone)</td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>@Html.EditorFor(model => model.category)</td>
+            <td>@Html.ValidationMessageFor(model => model.category)</td>
+        </tr>
+        <tr>
+            <td>Lowest Rate</td>
+            <td>@Html.EditorFor(model => model.lowest_rate)</td>
+            <td>@Html.ValidationMessageFor(model => model.lowest_rate)</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>@Html.EditorFor(model => model.hotel_description)</td>
+            <td>@Html.ValidationMessageFor(model => model.hotel_description)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Save"
+                       formaction="/Hotels/Insert" />
+                <input type="submit" value="Cancel"
+                       formaction="/Hotels/Index" />
+            </td>
+        </tr>
+    </table>
+}
